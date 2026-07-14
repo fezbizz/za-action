@@ -74,7 +74,7 @@
             margin-top: 20px;
             transition: transform 0.2s;
         " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-            🇿🇦 I'm Taking Action
+            💪 I'm Taking Action
         </button>
     `;
 

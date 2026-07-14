@@ -2,7 +2,65 @@
 (function() {
     'use strict';
 
-    // Smooth scroll for nav links
+    // ===== UPCOMING MARCHES & EVENTS =====
+    // Edit this array to add/update events. Format:
+    // { date: "15 Jul", title: "March against...", desc: "...", location: "Pretoria, Union Buildings", org: "March and March" }
+    // Events are stored and displayed automatically.
+    const events = [
+        // --- ADD NEW EVENTS BELOW THIS LINE ---
+        // Example:
+        // { date: "17 Jul", day: "Thu", title: "National Shutdown March", desc: "Nationwide protests against illegal immigration and border collapse.", location: "Multiple locations — check movement pages", org: "March and March" },
+        // { date: "18 Jul", day: "Fri", title: "Pretoria Mass Meeting", desc: "Community meeting to plan next steps.", location: "Pretoria, Church Square", org: "LACO" },
+        // --- ADD NEW EVENTS ABOVE THIS LINE ---
+    ];
+
+    function renderEvents() {
+        const container = document.getElementById('eventsContainer');
+        if (!container) return;
+
+        if (events.length === 0) {
+            container.innerHTML = `
+                <div class="event-card placeholder">
+                    <div class="event-date">—</div>
+                    <div class="event-details">
+                        <h3>No upcoming marches posted yet</h3>
+                        <p>We're tracking ground-level movements. Check back soon or follow the movements below on Facebook, YouTube, and TikTok for real-time updates.</p>
+                    </div>
+                </div>
+            `;
+            return;
+        }
+
+        container.innerHTML = events.map(ev => `
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="day">${ev.date}</span>
+                    ${ev.day || ''}
+                </div>
+                <div class="event-details">
+                    <h3>${ev.title}</h3>
+                    <p>${ev.desc}</p>
+                    ${ev.location ? `<div class="event-location">📍 ${ev.location}</div>` : ''}
+                    ${ev.org ? `<div style="margin-top:6px;font-size:0.8em;color:var(--gold);font-weight:700;">Organised by: ${ev.org}</div>` : ''}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    renderEvents();
+
+    // ===== UPDATE TICKER TEXT =====
+    function updateTicker() {
+        const ticker = document.getElementById('tickerText');
+        if (!ticker || events.length === 0) return;
+
+        const nextEvents = events.slice(0, 3);
+        const msg = nextEvents.map(e => `📢 ${e.date} — ${e.title} (${e.location || 'TBC'})`).join('  ◆  ');
+        ticker.innerHTML = `<span>🇿🇦 SA Action LIVE — ${msg}  ◆  Follow movements on Facebook, YouTube, TikTok for ground-level updates</span>`;
+    }
+    updateTicker();
+
+    // ===== SMOOTH SCROLL =====
     document.querySelectorAll('.nav-bar a[href^="#"]').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -13,7 +71,7 @@
         });
     });
 
-    // Active nav link highlighting on scroll
+    // ===== ACTIVE NAV HIGHLIGHT =====
     const sections = document.querySelectorAll('.section');
     const navLinks = document.querySelectorAll('.nav-bar a');
 
@@ -39,7 +97,7 @@
     window.addEventListener('scroll', updateActiveNav);
     updateActiveNav();
 
-    // "Report" phone number tap-to-call for mobile
+    // ===== TAP-TO-CALL =====
     const phones = document.querySelectorAll('.phone');
     phones.forEach(el => {
         const num = el.textContent.trim().replace(/[^0-9]/g, '');
@@ -54,7 +112,7 @@
         }
     });
 
-    // Simple counter: display number of young people taking action
+    // ===== ACTION COUNTER =====
     const counterSection = document.createElement('section');
     counterSection.className = 'section alt-bg';
     counterSection.style.textAlign = 'center';
@@ -78,11 +136,9 @@
         </button>
     `;
 
-    // Insert before footer
     const footer = document.querySelector('footer');
     footer.parentNode.insertBefore(counterSection, footer);
 
-    // Counter logic
     let count = parseInt(localStorage.getItem('saActionCount') || '0');
     document.getElementById('actionCounter').textContent = count.toLocaleString();
 
@@ -91,7 +147,6 @@
         localStorage.setItem('saActionCount', count.toString());
         document.getElementById('actionCounter').textContent = count.toLocaleString();
 
-        // Confetti-like visual feedback
         const flash = document.createElement('div');
         flash.style.cssText = `
             position: fixed; top: 0; left: 0; right: 0; bottom: 0;

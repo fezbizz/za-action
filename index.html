@@ -15,7 +15,16 @@
         </div>
     </header>
 
+    <!-- BREAKING NEWS TICKER -->
+    <div class="ticker-wrap" id="live">
+        <div class="ticker-label">📢 LIVE</div>
+        <div class="ticker" id="tickerText">
+            <span>🇿🇦 SA Action — tracking ground-level movements, marches, and civic action across South Africa. Follow March and March, LACO, SACR, Vezi Production and leaders like Jacinta Zinhle Mangobese Zuma for updates.</span>
+        </div>
+    </div>
+
     <nav class="nav-bar" id="navBar">
+        <a href="#live">📢 Live</a>
         <a href="#the-issue">The Issue</a>
         <a href="#know-your-rights">Know Your Rights</a>
         <a href="#take-action">Take Action</a>
@@ -24,6 +33,33 @@
     </nav>
 
     <main>
+        <!-- SECTION 0: UPCOMING MARCHES & EVENTS -->
+        <section id="upcoming" class="section alt-bg">
+            <h2>📢 Upcoming Marches & Actions</h2>
+            <p class="section-intro">Ground-level movements across South Africa. Know what's happening, where, and when. <strong>Always act within the law.</strong></p>
+            <div class="events-container" id="eventsContainer">
+                <!-- Events injected by script.js -->
+                <div class="event-card placeholder">
+                    <div class="event-date">Loading...</div>
+                    <div class="event-details">
+                        <h3>Checking for upcoming events</h3>
+                        <p>Events will appear here as we track them. Follow the movements on Facebook, YouTube, and TikTok.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="follow-movements">
+                <h3>👥 Follow the Movements</h3>
+                <div class="movement-tags">
+                    <span class="tag">March and March</span>
+                    <span class="tag">LACO</span>
+                    <span class="tag">SACR</span>
+                    <span class="tag">Vezi Production</span>
+                    <span class="tag">Jacinta Zinhle Mangobese Zuma</span>
+                </div>
+                <p class="follow-note">Follow these on <strong>Facebook, YouTube, TikTok</strong> for real-time updates from the ground.</p>
+            </div>
+        </section>
+
         <!-- SECTION 1: THE ISSUE -->
         <section id="the-issue" class="section">
             <h2>What is Happening in South Africa?</h2>

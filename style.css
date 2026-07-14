@@ -74,6 +74,145 @@ body {
     font-weight: 500;
 }
 
+/* ===== Breaking News Ticker ===== */
+.ticker-wrap {
+    display: flex;
+    align-items: center;
+    background: var(--red);
+    color: var(--white);
+    padding: 0;
+    font-size: 0.9em;
+    font-weight: 600;
+    overflow: hidden;
+    position: relative;
+}
+
+.ticker-label {
+    background: var(--black);
+    color: var(--gold);
+    padding: 10px 16px;
+    font-weight: 800;
+    font-size: 0.85em;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+}
+
+.ticker {
+    flex: 1;
+    overflow: hidden;
+    padding: 10px 16px;
+    white-space: nowrap;
+}
+
+.ticker span {
+    display: inline-block;
+    animation: ticker-scroll 25s linear infinite;
+    padding-right: 60px;
+}
+
+@keyframes ticker-scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* ===== Upcoming Events ===== */
+.section-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: -15px auto 30px;
+    font-size: 1.05em;
+    color: var(--gray);
+}
+
+.events-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.event-card {
+    display: flex;
+    gap: 20px;
+    background: var(--off-white);
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 5px solid var(--red);
+    transition: transform 0.2s;
+}
+
+.event-card:hover {
+    transform: translateX(5px);
+}
+
+.event-date {
+    min-width: 80px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.85em;
+    color: var(--red);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.event-date .day {
+    font-size: 1.8em;
+    line-height: 1;
+}
+
+.event-details h3 {
+    margin-bottom: 5px;
+    font-size: 1.05em;
+}
+
+.event-details p {
+    font-size: 0.9em;
+    color: var(--gray);
+}
+
+.event-details .event-location {
+    font-size: 0.85em;
+    color: var(--blue);
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+/* ===== Follow Movements ===== */
+.follow-movements {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.follow-movements h3 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.movement-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    background: var(--gold);
+    color: var(--black);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85em;
+    cursor: default;
+}
+
+.follow-note {
+    font-size: 0.9em;
+    color: var(--gray);
+}
+
 /* ===== Navigation ===== */
 .nav-bar {
     background: var(--white);

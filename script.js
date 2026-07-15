@@ -8,9 +8,7 @@
     // Events are stored and displayed automatically.
     const events = [
         // --- ADD NEW EVENTS BELOW THIS LINE ---
-        // Example:
-        // { date: "17 Jul", day: "Thu", title: "National Shutdown March", desc: "Nationwide protests against illegal immigration and border collapse.", location: "Multiple locations — check movement pages", org: "March and March" },
-        // { date: "18 Jul", day: "Fri", title: "Pretoria Mass Meeting", desc: "Community meeting to plan next steps.", location: "Pretoria, Church Square", org: "LACO" },
+        { date: "15 Jul", day: "Tue", title: "LACO March — Cape Town", desc: "Removing illegal immigrants from workplaces. March organised by LACO.", location: "Cape Town", org: "LACO" },
         // --- ADD NEW EVENTS ABOVE THIS LINE ---
     ];
 

@@ -41,3 +41,15 @@
 - WhatsApp broadcast channel for instant alerts
 - Mobile app (PWA or native) with push notifications
 - Crowdsourced event reporting from users on the ground
+
+## Viral Growth Strategy
+
+| Tactic | How | Effort |
+|---|---|---|
+| **QR code at marches** | Print the QR code from the site, stick it up at march meeting points | Low |
+| **WhatsApp group drops** | Share the link in every march coordination group you're in | Low |
+| **Movement pages** | Comment on LACO, March and March, SACR Facebook posts with the link | Low |
+| **TikTok video** | 15-sec screen recording of the site, text overlay "All marches in one place" | Medium |
+| **Influencer share** | Get Jacinta Zinhle Mangobese Zuma or leaders to share the link once | High impact |
+| **Print flyers** | Print the share-poster.html as A5 flyers, hand out at marches | Medium |
+| **WhatsApp status** | Post the QR code to your WhatsApp status daily | Low |

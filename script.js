@@ -160,4 +160,115 @@
         }, 100);
     });
 
+    // ===== FLOATING SHARE BUTTON =====
+    const shareBtn = document.createElement('div');
+    shareBtn.id = 'shareBtn';
+    shareBtn.innerHTML = '📤 Share';
+    shareBtn.title = 'Share SA Action';
+    document.body.appendChild(shareBtn);
+
+    // Share button styles
+    const shareStyle = document.createElement('style');
+    shareStyle.textContent = `
+        #shareBtn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: var(--green, #007A4B);
+            color: #fff;
+            border: none;
+            padding: 14px 22px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1em;
+            cursor: pointer;
+            z-index: 9999;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #shareBtn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 28px rgba(0,0,0,0.35);
+        }
+        .share-popup {
+            position: fixed;
+            bottom: 90px;
+            right: 24px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+            z-index: 9998;
+            overflow: hidden;
+            display: none;
+            min-width: 220px;
+        }
+        .share-popup.show {
+            display: block;
+            animation: slideUp 0.25s ease;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .share-popup a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            text-decoration: none;
+            color: var(--black, #1a1a1a);
+            font-weight: 600;
+            font-size: 0.95em;
+            border-bottom: 1px solid #eee;
+            transition: background 0.15s;
+        }
+        .share-popup a:last-child { border-bottom: none; }
+        .share-popup a:hover { background: #f5f5f0; }
+        .share-popup a span { font-size: 1.4em; }
+        @media (max-width: 600px) {
+            #shareBtn { bottom: 16px; right: 16px; padding: 12px 18px; font-size: 0.9em; }
+            .share-popup { bottom: 78px; right: 16px; min-width: 190px; }
+        }
+    `;
+    document.head.appendChild(shareStyle);
+
+    const shareUrl = encodeURIComponent('https://fezbizz.github.io/za-action/');
+    const shareText = encodeURIComponent('🇿🇦 SA Action — tracking ground-level marches across South Africa. Check it out:');
+
+    // Create popup
+    const popup = document.createElement('div');
+    popup.className = 'share-popup';
+    popup.innerHTML = `
+        <a href="https://wa.me/?text=${shareText}%20${shareUrl}" target="_blank" rel="noopener" onclick="this.closest('.share-popup').classList.remove('show')">
+            <span>💬</span> WhatsApp
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=${shareUrl}" target="_blank" rel="noopener" onclick="this.closest('.share-popup').classList.remove('show')">
+            <span>📘</span> Facebook
+        </a>
+        <a href="https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}" target="_blank" rel="noopener" onclick="this.closest('.share-popup').classList.remove('show')">
+            <span>🐦</span> X / Twitter
+        </a>
+        <a href="https://www.tiktok.com/search?q=${encodeURIComponent('SA Action marches')}" target="_blank" rel="noopener" onclick="this.closest('.share-popup').classList.remove('show')">
+            <span>🎵</span> TikTok (search)
+        </a>
+        <a href="#" onclick="if(navigator.share){navigator.share({title:'SA Action',text:'🇿🇦 SA Action — tracking ground-level marches across South Africa',url:'https://fezbizz.github.io/za-action/'})}else{this.closest('.share-popup').classList.remove('show')};return false;">
+            <span>📤</span> Share via...
+        </a>
+    `;
+    document.body.appendChild(popup);
+
+    shareBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        popup.classList.toggle('show');
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!popup.contains(e.target) && e.target !== shareBtn) {
+            popup.classList.remove('show');
+        }
+    });
+
 })();

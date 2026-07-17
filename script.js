@@ -9,6 +9,7 @@
     const events = [
         // --- ADD NEW EVENTS BELOW THIS LINE ---
         { date: "15 Jul", day: "Tue", title: "LACO March — Cape Town", desc: "Removing illegal immigrants from workplaces. March organised by LACO.", location: "Cape Town", org: "LACO" },
+        { date: "18 Jul", day: "Sat", title: "Operation Dudula March — Kraaifontein", desc: "Community march against illegal immigration. Assemble at Bloekomblos Secondary School at 10:00AM.", location: "Kraaifontein, starting at Bloekomblos Secondary School", org: "Operation Dudula", contact: "063 500 8203" },
         // --- ADD NEW EVENTS ABOVE THIS LINE ---
     ];
 
@@ -40,6 +41,7 @@
                     <p>${ev.desc}</p>
                     ${ev.location ? `<div class="event-location">📍 ${ev.location}</div>` : ''}
                     ${ev.org ? `<div style="margin-top:6px;font-size:0.8em;color:var(--gold);font-weight:700;">Organised by: ${ev.org}</div>` : ''}
+                    ${ev.contact ? `<div style="margin-top:4px;font-size:0.85em;color:var(--blue);font-weight:600;">📞 Contact: ${ev.contact}</div>` : ''}
                 </div>
             </div>
         `).join('');

@@ -8,7 +8,6 @@
     // Events are stored and displayed automatically.
     const events = [
         // --- ADD NEW EVENTS BELOW THIS LINE ---
-        { date: "15 Jul", day: "Tue", title: "LACO March — Cape Town", desc: "Removing illegal immigrants from workplaces. March organised by LACO.", location: "Cape Town", org: "LACO" },
         { date: "18 Jul", day: "Sat", title: "Operation Dudula March — Kraaifontein", desc: "Community march against illegal immigration. Assemble at Bloekomblos Secondary School at 10:00AM.", location: "Kraaifontein, starting at Bloekomblos Secondary School", org: "Operation Dudula", contact: "063 500 8203" },
         // --- ADD NEW EVENTS ABOVE THIS LINE ---
     ];

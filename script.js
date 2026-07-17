@@ -4,7 +4,7 @@
 
     // ===== UPCOMING MARCHES & EVENTS =====
     // Edit this array to add/update events. Format:
-    // { date: "15 Jul", title: "March against...", desc: "...", location: "Pretoria, Union Buildings", org: "March and March" }
+    // { date: "18 Jul", title: "March against...", desc: "...", location: "Kraaifontein", org: "Operation Dudula" }
     // Events are stored and displayed automatically.
     const events = [
         // --- ADD NEW EVENTS BELOW THIS LINE ---

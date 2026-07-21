@@ -9,6 +9,7 @@
     const events = [
         // --- ADD NEW EVENTS BELOW THIS LINE ---
         { date: "18 Jul", day: "Sat", title: "Operation Dudula March — Kraaifontein", desc: "Community march against illegal immigration. Assemble at Bloekomblos Secondary School at 10:00AM.", location: "Kraaifontein, starting at Bloekomblos Secondary School", org: "Operation Dudula", contact: "063 500 8203" },
+        { date: "23 Jul", day: "Thu", title: "March and March — No Illegal Immigrants", desc: "March against illegal immigration. Assemble at St George's Cathedral Church, Whale Street at 9:00AM.", location: "Cape Town, starting at St George's Cathedral, Whale Street", org: "March and March" },
         // --- ADD NEW EVENTS ABOVE THIS LINE ---
     ];
 
